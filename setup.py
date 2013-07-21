@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='hupili',
-      version='0.0.1',
+      version='0.1.0',
       description='utility collected by hupili',
       author='Pili Hu',
       author_email='me@hupili.net',
