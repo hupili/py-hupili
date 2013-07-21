@@ -12,3 +12,8 @@
    * I believe different people have different collections.
    I don't want to mess the public index.
    Probably `utility` will be used later for more important purpose?
+
+## Why the module files are prefixed with "pl"?
+
+   * Some names are taken by the standard libs
+   and my editor's plugin complains. e.g. `time`.
