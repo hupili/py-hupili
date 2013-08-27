@@ -22,13 +22,25 @@ class MongoQueue(object):
         else: 
             return None
 
+    def size(self):
+        return self.queue.find().count()
+
     def empty(self):
-        return self.queue.find().count() == 0
+        return self.size() == 0
 
 if __name__ == '__main__':
+    import random
     q = MongoQueue()
     map(lambda i: q.enqueue(i), range(0,5))
     while not q.empty():
+        print 'Remaining jobs:', q.size()
         d = q.dequeue()
         if not d is None:
-            print d
+            print 'Get Job:', d
+            # Simulate job execution
+            if random.random() > 0.5:
+                print 'success'
+            else:
+                print 'fail'
+                q.enqueue(d)
+
